@@ -5,7 +5,7 @@ var morelink = " ";
 
 function saringtags(r, l) {
     for (var e = r.split("<"), n = 0; n < e.length; n++) - 1 != e[n].indexOf(">") && (e[n] = e[n].substring(e[n].indexOf(">") + 1, e[n].length));
-    return e = e.join(""),
+        return e = e.join(""),
         e = e.substring(0, l - 1)
 }
 
@@ -45,21 +45,19 @@ function relatpost() {
         relgambar = n;
 
     for (var t = 0; t < reljudul.length; t++) {
-        var a = Math.floor((reljudul.length - 1) * Math.random()),
-            u = reljudul[t],
-            s = relurls[t],
-            i = relcuplikan[t],
-            o = relgambar[t];
+        var a = Math.floor((reljudul.length - 1) * Math.random());
         reljudul[t] = reljudul[a],
             relurls[t] = relurls[a],
             relcuplikan[t] = relcuplikan[a],
             relgambar[t] = relgambar[a],
-            reljudul[a] = u,
-            relurls[a] = s,
-            relcuplikan[a] = i,
-            relgambar[a] = o
+            reljudul[a] = reljudul[t],
+            relurls[a] = relurls[t],
+            relcuplikan[a] = relcuplikan[t],
+            relgambar[a] = relgambar[t]
     }
-    for (m = 0, h = Math.floor((reljudul.length - 1) * Math.random()), c = h; m < relmaxposts && (relurls[h] == document.URL || (document.write("<article class='related-item post item-0'><div class='entry-image'><a class='entry-image-link' href='" + relurls[h] + "'><span class='entry-thumb lazy-ify' data-image='" + relgambar[h] + "' style='background-image:url(" + relgambar[h] + ")' /></a></div><h2 class='entry-title'><a href='" + relurls[h] + "' target='_top'>" + reljudul[h] + "</a></h2>" + relcuplikan[h] + " ... <a href='" + relurls[h] + "' target='_top'>" + morelink + "</a><span class='news-text'></article>"), m++, m != relmaxposts)) && (h < reljudul.length - 1 ? h++ : h = 0, h != c););
+    for (m = 0, h = Math.floor((reljudul.length - 1) * Math.random()), c = h; m < relmaxposts && (relurls[h] == document.URL || (
+      document.write("<article class='related-item post item-0'><div class='entry-image'><a class='entry-image-link' href='" + relurls[h] + "'><span class='entry-thumb lazy-ify' data-image='" + relgambar[h] + "' style='background-image:url(" + relgambar[h] + ")' /></a></div><h2 class='entry-title'><a href='" + relurls[h] + "' target='_top'>" + reljudul[h] + "</a></h2>" + relcuplikan[h] + " ... <a href='" + relurls[h] + "' target='_top'>" + morelink + "</a><span class='news-text'></article>"), m++, m != relmaxposts))
+         && (h < reljudul.length - 1 ? h++ : h = 0, h != c););
 }
 var reljudul = new Array,
     relurls = new Array,
